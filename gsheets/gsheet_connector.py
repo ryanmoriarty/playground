@@ -9,22 +9,30 @@ from oauth2client.file import Storage
 
 import sys
 
+import pandas as pd
+import datetime
 
-""""
-try:
-    import argparse
-    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except ImportError:
-    flags = None
-"""
+class gSheetConnector:
+    """
+    try:
+        import argparse
+        flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+    except ImportError:
+        flags = None
+    """
 
-# If modifying these scopes, delete your previously saved credentials
-# at ~/.credentials/sheets.googleapis.com-python-quickstart.json
-SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-CLIENT_SECRET_FILE = 'client_secret.json'
-APPLICATION_NAME = 'Google Sheets API Python Quickstart'
+    # If modifying these scopes, delete your previously saved credentials
+    # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
+    SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
+    CLIENT_SECRET_FILE = 'client_secret.json'
+    APPLICATION_NAME = 'Google Sheets API Python Quickstart'
 
-class gSheetConnector():
+
+    def __init__(self,spreadsheetId,rangeName,labelsName,fileout):
+        self.spreadsheetId = spreadsheetId
+        self.rangeName = rangeName
+        self.labelsName = labelsName
+        self.fileout = fileout
 
 
     def get_credentials(self):
@@ -55,49 +63,60 @@ class gSheetConnector():
             print('Storing credentials to ' + credential_path)
         return credentials
 
-    def main():
+    def main(self):
         """Shows basic usage of the Sheets API.
 
         Creates a Sheets API service object and prints the names and majors of
         students in a sample spreadsheet:
         https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+
+        spreadsheetId = '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms'
+        rangeName = 'Cities!A2:E'
+
         """
-        credentials = get_credentials()
+        credentials = self.get_credentials()
         http = credentials.authorize(httplib2.Http())
         discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?'
                         'version=v4')
         service = discovery.build('sheets', 'v4', http=http,
                                   discoveryServiceUrl=discoveryUrl)
 
-        #spreadsheetId = '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms'
-        #spreadsheetId = '1TnYumkVPc14XcmRgWKNgGWPj0qV64AG6sazbqdbXLlQ'
 
-        # Get the values...
-        #rangeName = 'Cities!A2:E'
+        # RM added
+        # Get the values from the spreadsheet...
         result = service.spreadsheets().values().get(
-            spreadsheetId=spreadsheetId, range=rangeName).execute()
+            spreadsheetId=self.spreadsheetId, range=self.rangeName).execute()
         values = result.get('values', [])
 
+        # RM added
         # Get the columns
-        #labelsName = 'Cities!A1:E1'
         result = service.spreadsheets().values().get(
-            spreadsheetId=spreadsheetId, range=labelsName).execute()
+            spreadsheetId=self.spreadsheetId, range=self.labelsName).execute()
         labels = result.get('values', [])
 
+        # Write results
         if not values:
             print('No data found.')
         else:
-            print('Writing to CSV')
-            import pandas as pd
-            df = pd.DataFrame.from_records(values,columns=labels)
-            import datetime
+
+            # Create CSV of returned values using Pandas...
+            print('Writing {0} to CSV'.format(self.spreadsheetId))
+            df = pd.DataFrame.from_records(values,columns=labels[:1])
+
+            # Add extract time...
             extractTime = datetime.datetime.now()
             df['ExtractTime'] = extractTime.strftime("%Y-%m-%d %H:%M")
-            df.to_csv(fileout,encoding='UTF8',index=False)
-            print('File: {0} created'.format(fileout))
-            #print('Name, Major:')
-            #for row in values:
-                # Print columns A and E, which correspond to indices 0 and 4.
-                #print('%s' % row[0:6])
-            #    print('%s, %s' % (row[0], row[4]))
-        return self
+
+            # Construct filename and write to CSV...
+            filename = self.fileout + '_' + extractTime.strftime("%Y-%m-%d") + '.csv'
+            df.to_csv(filename,encoding='UTF8',index=None)
+            print('File: {0} created'.format(filename))
+
+
+if __name__ == '__main__':
+    spreadsheetId = sys.argv[1]
+    rangeName = sys.argv[2]
+    labelsName = sys.argv[3]
+    fileout = sys.argv[4]
+
+    main(self,spreadsheetId,rangeName,labelsName,fileout)

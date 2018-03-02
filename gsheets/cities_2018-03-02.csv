@@ -1,0 +1,8 @@
+Country,City,Abbreviation,City Type,Tier,Is Captial,Is Full Time,Region,ExtractTime
+United Kindgom,London,LDN,Metro,T1,TRUE,TRUE,Europe,2018-03-02 16:52
+United States,New York,NYC,Metro,T1,FALSE,TRUE,US,2018-03-02 16:52
+United States,Lost Angeles,LA,Metro,T1,FALSE,TRUE,US,2018-03-02 16:52
+United States,Washington D.C.,DC,Metro,T1,TRUE,TRUE,US,2018-03-02 16:52
+United States,San Francisco,SF,Metro,T1,FALSE,TRUE,US,2018-03-02 16:52
+Spain,San Francisco,MDR,Metro,T1,TRUE,TRUE,Europe,2018-03-02 16:52
+Germany,Berlin,BER,Metro,T1,TRUE,FALSE,Europe,2018-03-02 16:52
