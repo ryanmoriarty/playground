@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "august-gradient-196620",
+  "private_key_id": "83886d17774c40b2e8c3bb16e7e2ac8c80d73c7a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8n2im69wkGap7\ns2tjXQSEdUG8DcV/Vw9Zhs1xCWEI2GmkfWhtV+v+b7b+jmwJWDqhb5M/+w0lVEKc\nKMhbGeaB32k3s+9bVVk25fFWctzOWReqUdE9lWGb89uEP5ZVqdfm9iI7wc1b0+TJ\nCKzkjy4gTEca+fRbo6lZa60m9g/wLKSTuQnEDRqAsm69V3ooDBuFCnOzs5udLX5/\nLe6248Rub7TbQadY6nlrgD1jMZWqaHIxHn8Spk8/zDfjlQMXv6hVaZOA0RbQUyhC\n8SJyu8qNoQqHU/DdTll//JJcdZ0fDB8LvMfQL0VnhMHU/tr5oOo8W4D4tpeOvnQt\nsvHDHtN1AgMBAAECggEABvkSppcSDpCXVZbaqbPy2o22JiRRMIWwptPdrOfWmzva\n3e6X6XDmY8PP/UWZF1hYZIbqJ+OZRw/AHaNBUuLYe2Udr+Y6O0Nitq2V+CbrZEJ1\nZkG7jT4EO35ul0s9fMG4Xkyrk890jsg8zTTBpXpoj1+aglQKtUeN12UsY8QVb0C6\n0iDXipxqHq1zBnMu9VZpL3SBem69Bvcfel7SVSO7T6Nk+JtrNuFTOsnkpbz6WgrM\nVq4UMbzg16ITiKlm+bVRtRvgouOtW4r1e6x9H+DTWPIvh4CXrgkaaSIS/e0Ze6L6\n8J3RaoiJyrkd3tuYPvj8gr2vQiiGtuki8w8l3wAFqQKBgQD+SugAzjTMga1KrH+T\nQlEdt1NzcfbPeeIW27nFdLTihDLjim71FHofs6iuPvnEYe2R6cWKj0C5s/XTUr8T\nTEce5Zkkw/1QJkPby2iyM+KV+AamT6O/Rf0ok9WJW8ymiAx9ShKdDf0SUyOeogyD\njfCa8lxzEM32sT1xcYxlhsR+LQKBgQC946AD0GrxgMu+S2mfrUruZADQqUQvXLvq\n7ZKSPai+9B84SUDRdbN2a6vEipFb8KFMRUu1G3DvR/TOhczqDQE/+xJeOcT7thk6\nfWZ9C4blGHc76bHP8Wtm1upYA3oVf5I76V4VsbDUxbiykBFRGZ2Ay6cxoyS9Iyco\nRzjPDaI/aQKBgA5xHp/9Fg6PRtI43b31RDoV0U17KXM7DtYRgIlwSV2b+G/nysls\ncksenvPWa8T1ctKYnjlyTVC+obVwu51S9a8RhxMJdnd41N3EvZtxSusNfQMw/rG8\nPdZyHuyAJC1JCLyM2mXFB5xk0F8QAPnvs7x5CzsVtzzNcBnjQv/5GWu5AoGAZkbL\nMiK451kq5FU0D+hD2sEMW1dAPY5iPPg3IQOK90b/5c421lriDZ+Sxeqovm+OQUl1\nrJeaLZeBOReCNnJIwRBXZV8SRU1gq0tNv35M6upRlniZ6FmtMpgBYuSEhj3PIuvg\nXCj4CLJyd+L3IMp+Nhf69tZbfHAJsD0kUQmT4TkCgYEAtUutTs41vNOuFGSGkAmn\nbj9HayP/4Zau8wR2hDxn/hr3EMSO/JFRWJW1VnJnhaZklVoO5JW1Whc26Cg8sodj\nz/bnjY3gsutx4AZGjc7e8Ti81icV+PkKU/7HieGAggJs/V0katLKLoXxK790NTbu\nhagFe5CRsrsI1Xe8A3s5fN0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sofar-testing@august-gradient-196620.iam.gserviceaccount.com",
+  "client_id": "103183328797007814712",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sofar-testing%40august-gradient-196620.iam.gserviceaccount.com"
+}
